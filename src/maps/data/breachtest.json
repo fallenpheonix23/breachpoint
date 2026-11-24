@@ -1,0 +1,1047 @@
+{
+ "id": "breachtest",
+ "name": "BREACH TEST",
+ "location": "Test fixture",
+ "desc": "Breach mode test map: two sites, setup gate, forward spawn.",
+ "swatch": [
+  "#9aa4b1",
+  "#d8a64a",
+  "#5a6270"
+ ],
+ "bounds": [
+  -26,
+  -52,
+  26,
+  52
+ ],
+ "symmetry": "none",
+ "mode": "breach",
+ "setup": 20,
+ "clock": [
+  210,
+  150
+ ],
+ "floors": [
+  {
+   "name": "Ground",
+   "y": 0
+  }
+ ],
+ "theme": {
+  "sky": {
+   "top": "#7d93ad",
+   "horizon": "#dfe3e8",
+   "bottom": "#c9ccd2",
+   "sun": "#fff2d8",
+   "elev": 50,
+   "az": 150,
+   "clouds": 0.3,
+   "stars": 0
+  },
+  "sun": {
+   "color": "#fff1dc",
+   "intensity": 2.3
+  },
+  "hemi": {
+   "sky": "#e2e8f0",
+   "ground": "#a49a86",
+   "intensity": 1.1
+  },
+  "fog": {
+   "color": "#dcdfe3",
+   "near": 120,
+   "far": 400
+  },
+  "exposure": 1.0,
+  "env": 0.4,
+  "grade": {
+   "sat": 1.0,
+   "contrast": 1.02,
+   "vignette": 0.1
+  },
+  "bloom": 0.2,
+  "weather": "none",
+  "ambient": "town",
+  "stepOut": "stone"
+ },
+ "materials": {
+  "wall": {
+   "tex": "concrete",
+   "color": "#a7a197",
+   "scale": 3,
+   "rough": 0.9
+  },
+  "floor": {
+   "tex": "concrete",
+   "color": "#8f8b84",
+   "scale": 3,
+   "rough": 0.95
+  },
+  "trim": {
+   "tex": "metal",
+   "color": "#6f7a55",
+   "scale": 2,
+   "rough": 0.6
+  },
+  "crate": {
+   "tex": "wood",
+   "color": "#9a9486",
+   "scale": 1.5,
+   "rough": 0.8
+  }
+ },
+ "geometry": [
+  {
+   "type": "ground",
+   "rect": [
+    -26,
+    -52,
+    26,
+    52
+   ],
+   "mat": "floor"
+  },
+  {
+   "type": "box",
+   "min": [
+    -26,
+    0,
+    -52
+   ],
+   "max": [
+    -24,
+    6,
+    52
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    24,
+    0,
+    -52
+   ],
+   "max": [
+    26,
+    6,
+    52
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    -24,
+    0,
+    -52
+   ],
+   "max": [
+    24,
+    6,
+    -50
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    -24,
+    0,
+    50
+   ],
+   "max": [
+    24,
+    6,
+    52
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "wall",
+   "from": [
+    -10,
+    38
+   ],
+   "to": [
+    10,
+    38
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": [
+    {
+     "at": 10,
+     "w": 8,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    }
+   ]
+  },
+  {
+   "type": "wall",
+   "from": [
+    -10,
+    38
+   ],
+   "to": [
+    -10,
+    50
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  },
+  {
+   "type": "wall",
+   "from": [
+    10,
+    38
+   ],
+   "to": [
+    10,
+    50
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  },
+  {
+   "type": "wall",
+   "from": [
+    -24,
+    4
+   ],
+   "to": [
+    -12,
+    4
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  },
+  {
+   "type": "wall",
+   "from": [
+    -24,
+    13
+   ],
+   "to": [
+    -12,
+    13
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  },
+  {
+   "type": "wall",
+   "from": [
+    -12,
+    4
+   ],
+   "to": [
+    -12,
+    13
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": [
+    {
+     "at": 4.5,
+     "w": 2.4,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    }
+   ]
+  },
+  {
+   "type": "wall",
+   "from": [
+    -24,
+    -5
+   ],
+   "to": [
+    24,
+    -5
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": [
+    {
+     "at": 6,
+     "w": 4,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    },
+    {
+     "at": 24,
+     "w": 8,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    },
+    {
+     "at": 42,
+     "w": 4,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    }
+   ]
+  },
+  {
+   "type": "box",
+   "min": [
+    -9,
+    0,
+    21
+   ],
+   "max": [
+    -7,
+    1.1,
+    23
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    6,
+    0,
+    25
+   ],
+   "max": [
+    8,
+    1.1,
+    27
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    -4,
+    0,
+    4
+   ],
+   "max": [
+    -2,
+    1.1,
+    6
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    8,
+    0,
+    11
+   ],
+   "max": [
+    10,
+    1.1,
+    13
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    -10,
+    0,
+    -15
+   ],
+   "max": [
+    -8,
+    1.1,
+    -13
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    5,
+    0,
+    -17
+   ],
+   "max": [
+    7,
+    1.1,
+    -15
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    -3,
+    0,
+    -35
+   ],
+   "max": [
+    -1,
+    1.1,
+    -33
+   ],
+   "mat": "crate"
+  },
+  {
+   "type": "box",
+   "min": [
+    -14,
+    0,
+    18
+   ],
+   "max": [
+    -12,
+    3,
+    26
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    12,
+    0,
+    14
+   ],
+   "max": [
+    14,
+    3,
+    22
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    -16,
+    0,
+    -24
+   ],
+   "max": [
+    -13,
+    3,
+    -18
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "box",
+   "min": [
+    13,
+    0,
+    -28
+   ],
+   "max": [
+    16,
+    3,
+    -20
+   ],
+   "mat": "wall"
+  },
+  {
+   "type": "wall",
+   "from": [
+    -10,
+    -38
+   ],
+   "to": [
+    10,
+    -38
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": [
+    {
+     "at": 10,
+     "w": 8,
+     "y": 0,
+     "h": 2.6,
+     "kind": "door"
+    }
+   ]
+  },
+  {
+   "type": "wall",
+   "from": [
+    -10,
+    -50
+   ],
+   "to": [
+    -10,
+    -38
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  },
+  {
+   "type": "wall",
+   "from": [
+    10,
+    -50
+   ],
+   "to": [
+    10,
+    -38
+   ],
+   "y": 0,
+   "h": 4,
+   "t": 0.4,
+   "mat": "wall",
+   "frame": "trim",
+   "openings": []
+  }
+ ],
+ "objectives": [
+  {
+   "id": "A",
+   "name": "Site A",
+   "rect": [
+    -6,
+    8,
+    6,
+    16
+   ],
+   "order": 0
+  },
+  {
+   "id": "B",
+   "name": "Site B",
+   "rect": [
+    -6,
+    -30,
+    6,
+    -22
+   ],
+   "order": 1
+  }
+ ],
+ "gates": [
+  {
+   "id": "spawnGate",
+   "min": [
+    -4,
+    0,
+    37.6
+   ],
+   "max": [
+    4,
+    3.5,
+    38.4
+   ],
+   "opens": "setup"
+  },
+  {
+   "id": "fwdGate",
+   "min": [
+    -12.4,
+    0,
+    7.1
+   ],
+   "max": [
+    -11.6,
+    3.5,
+    9.9
+   ],
+   "opens": "A"
+  }
+ ],
+ "spawns": [
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    -6,
+    0,
+    42
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    -2,
+    0,
+    42
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    2,
+    0,
+    42
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    6,
+    0,
+    42
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    -4,
+    0,
+    46
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    0,
+    0,
+    46
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 0,
+   "at": [
+    4,
+    0,
+    46
+   ],
+   "yaw": 0
+  },
+  {
+   "role": "attack",
+   "phase": 1,
+   "at": [
+    -21,
+    0,
+    6
+   ],
+   "yaw": -90
+  },
+  {
+   "role": "attack",
+   "phase": 1,
+   "at": [
+    -21,
+    0,
+    8.5
+   ],
+   "yaw": -90
+  },
+  {
+   "role": "attack",
+   "phase": 1,
+   "at": [
+    -21,
+    0,
+    11
+   ],
+   "yaw": -90
+  },
+  {
+   "role": "attack",
+   "phase": 1,
+   "at": [
+    -17,
+    0,
+    6
+   ],
+   "yaw": -90
+  },
+  {
+   "role": "attack",
+   "phase": 1,
+   "at": [
+    -17,
+    0,
+    11
+   ],
+   "yaw": -90
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    -6,
+    0,
+    -42
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    -2,
+    0,
+    -42
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    2,
+    0,
+    -42
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    6,
+    0,
+    -42
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    -4,
+    0,
+    -46
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    0,
+    0,
+    -46
+   ],
+   "yaw": 180
+  },
+  {
+   "role": "defend",
+   "phase": 0,
+   "at": [
+    4,
+    0,
+    -46
+   ],
+   "yaw": 180
+  }
+ ],
+ "turrets": [
+  {
+   "role": "attack",
+   "at": [
+    7.5,
+    0,
+    46
+   ]
+  },
+  {
+   "role": "defend",
+   "at": [
+    7.5,
+    0,
+    -46
+   ]
+  }
+ ],
+ "holds": [
+  {
+   "site": "A",
+   "at": [
+    -8,
+    0,
+    4
+   ]
+  },
+  {
+   "site": "A",
+   "at": [
+    8,
+    0,
+    6
+   ]
+  },
+  {
+   "site": "A",
+   "at": [
+    0,
+    0,
+    2
+   ]
+  },
+  {
+   "site": "A",
+   "at": [
+    -10,
+    0,
+    14
+   ]
+  },
+  {
+   "site": "A",
+   "at": [
+    10,
+    0,
+    18
+   ]
+  },
+  {
+   "site": "B",
+   "at": [
+    -8,
+    0,
+    -34
+   ]
+  },
+  {
+   "site": "B",
+   "at": [
+    8,
+    0,
+    -34
+   ]
+  },
+  {
+   "site": "B",
+   "at": [
+    0,
+    0,
+    -36
+   ]
+  },
+  {
+   "site": "B",
+   "at": [
+    -10,
+    0,
+    -20
+   ]
+  },
+  {
+   "site": "B",
+   "at": [
+    10,
+    0,
+    -24
+   ]
+  }
+ ],
+ "routes": {
+  "atkA_west": {
+   "role": "attack",
+   "phase": 0,
+   "kind": "mid",
+   "pts": [
+    [
+     0,
+     0,
+     36
+    ],
+    [
+     -8,
+     0,
+     28
+    ],
+    [
+     -4,
+     0,
+     18
+    ]
+   ]
+  },
+  "atkA_east": {
+   "role": "attack",
+   "phase": 0,
+   "kind": "mid",
+   "pts": [
+    [
+     0,
+     0,
+     36
+    ],
+    [
+     8,
+     0,
+     30
+    ],
+    [
+     4,
+     0,
+     18
+    ]
+   ]
+  },
+  "atkB_mid": {
+   "role": "attack",
+   "phase": 1,
+   "kind": "mid",
+   "pts": [
+    [
+     -10,
+     0,
+     8.5
+    ],
+    [
+     -4,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     -8
+    ],
+    [
+     0,
+     0,
+     -18
+    ]
+   ]
+  },
+  "atkB_east": {
+   "role": "attack",
+   "phase": 1,
+   "kind": "long",
+   "pts": [
+    [
+     -10,
+     0,
+     8.5
+    ],
+    [
+     8,
+     0,
+     0
+    ],
+    [
+     14,
+     0,
+     -8
+    ],
+    [
+     6,
+     0,
+     -18
+    ]
+   ]
+  }
+ },
+ "areas": [
+  {
+   "name": "Attacker Spawn",
+   "rect": [
+    -10,
+    38,
+    10,
+    50
+   ],
+   "kind": "SPAWN",
+   "tag": "spawn"
+  },
+  {
+   "name": "Forward Spawn",
+   "rect": [
+    -24,
+    4,
+    -12,
+    13
+   ],
+   "kind": "SPAWN"
+  },
+  {
+   "name": "Site A",
+   "rect": [
+    -6,
+    8,
+    6,
+    16
+   ],
+   "kind": "SITE",
+   "key": true
+  },
+  {
+   "name": "Site B",
+   "rect": [
+    -6,
+    -30,
+    6,
+    -22
+   ],
+   "kind": "SITE",
+   "key": true
+  },
+  {
+   "name": "Defender Spawn",
+   "rect": [
+    -10,
+    -50,
+    10,
+    -38
+   ],
+   "kind": "SPAWN",
+   "tag": "spawn"
+  },
+  {
+   "name": "Field",
+   "rect": [
+    -24,
+    -38,
+    24,
+    38
+   ],
+   "kind": "MID",
+   "y": [
+    -0.5,
+    0.95
+   ]
+  }
+ ]
+}

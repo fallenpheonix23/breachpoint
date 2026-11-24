@@ -1,0 +1,91 @@
+MAP ASHGROVE (ashgrove) — built in 207 ms
+  bounds {"x0":-82,"z0":-42,"x1":82,"z1":40} · 1033 boxes · 2 ramps · 61098 nav nodes · 404 drop links · 130 jump links
+  nodes per floor: Ground@0m=32730  Upper@4m=15912  Clock Top@9.2m=12456
+  ramp (-15,-4)–(-11,4) 0→0.9 m, 12.7°
+  ramp (11,-4)–(15,4) 0→0.9 m, 12.7°
+
+1. WALKABLE CONNECTIVITY
+  reachable nodes: 33354 / 61098   (27744 unreachable nodes outside tagged areas — roofs/props, ignored)
+  ✓ no unreachable regions inside tagged areas
+  ✓ no stuck spots (every reachable node can return to a spawn)
+
+2. SHORTEST TRAVEL TIME, spawn → key area (sprint 9.0 m/s · walk 6.2 m/s)
+  Well Yard                     BLUE   8.7 s /  12.6 s   78 m   RED  12.0 s /  17.4 s  108 m
+  Chapel                        BLUE  10.4 s /  15.1 s   93 m   RED  10.4 s /  15.0 s   93 m
+  High Street                   BLUE   2.3 s /   3.4 s   21 m   RED  14.9 s /  21.6 s  134 m
+  Market Square                 BLUE   8.0 s /  11.5 s   72 m   RED   7.9 s /  11.5 s   71 m
+  Hall Gallery                  BLUE  10.2 s /  14.8 s   91 m   RED  10.1 s /  14.7 s   91 m
+  Clock Top                     BLUE  12.7 s /  18.4 s  114 m   RED  12.7 s /  18.4 s  114 m
+  Tailor Upstairs               BLUE  10.6 s /  15.4 s   95 m   RED  14.5 s /  21.1 s  131 m
+  Arch Room                     BLUE   7.8 s /  11.3 s   70 m   RED  16.6 s /  24.1 s  149 m
+  Post Office Upstairs          BLUE   8.4 s /  12.3 s   76 m   RED  14.4 s /  20.9 s  129 m
+  Town Hall Upstairs            BLUE  10.0 s /  14.5 s   90 m   RED   9.9 s /  14.4 s   89 m
+  Canal Road                    BLUE   2.3 s /   3.3 s   21 m   RED  11.4 s /  16.5 s  102 m
+  Lock House                    BLUE  10.7 s /  15.5 s   96 m   RED  10.7 s /  15.5 s   96 m
+  Well Yard                     BLUE  12.0 s /  17.5 s  108 m   RED   8.7 s /  12.6 s   78 m
+  High Street                   BLUE  14.9 s /  21.6 s  134 m   RED   2.3 s /   3.3 s   21 m
+  Tailor Upstairs               BLUE  14.6 s /  21.1 s  131 m   RED  10.6 s /  15.3 s   95 m
+  Arch Room                     BLUE  16.6 s /  24.1 s  149 m   RED   7.7 s /  11.2 s   70 m
+  Post Office Upstairs          BLUE  14.4 s /  20.9 s  130 m   RED   8.4 s /  12.2 s   76 m
+  Canal Road                    BLUE  11.4 s /  16.6 s  103 m   RED   2.3 s /   3.4 s   21 m
+
+3. LONGEST UNBROKEN SIGHTLINES (eye 1.66 m → chest/head, 843 sample points every 3 m, 177 ms)
+   44.6 m  (35, 0.0, -9) High Street [Ground]  ↔  (2, 0.0, 21) Town Hall [Ground]
+   43.5 m  (-31, 4.0, -15) Bakery Upstairs [Upper]  ↔  (-7, 0.0, 21) Town Hall [Ground]
+   42.8 m  (74, 0.0, -21) Back Lane [Ground]  ↔  (47, 4.0, 12) Chemist Upstairs [Upper]
+   42.4 m  (-46, 4.0, -21) Inn Upstairs [Upper]  ↔  (-52, 4.0, 21) Chemist Upstairs [Upper]
+   42.1 m  (41, 0.0, -36) Cooper's Yard [Ground]  ↔  (44, 0.0, 6) High Street [Ground]
+   42.1 m  (-25, 4.0, -21) Bakery Upstairs [Upper]  ↔  (-28, 4.0, 21) Post Office Upstairs [Upper]
+   42.0 m  (-13, 0.0, -21) Tailor [Ground]  ↔  (-13, 0.0, 21) Town Hall [Ground]
+   42.0 m  (38, 4.0, -21) Terrace Walk [Upper]  ↔  (38, 4.0, 21) South Walk [Upper]
+   41.9 m  (-49, 4.0, -18) Inn Upstairs [Upper]  ↔  (-70, 0.0, 18) Quay Lane [Ground]
+   41.7 m  (-37, 4.0, -6) Arch Room [Upper]  ↔  (-1, 4.0, 15) Town Hall Upstairs [Upper]
+
+4. SPAWN → ENEMY SPAWN SIGHTLINES (must be 0)
+  ✓ 0 (checked 564 × 532 spawn positions)
+
+5. ON-SCREEN ENEMY HEIGHT AT THE LONGEST SIGHTLINE (default FOV 95° horizontal, 1.8 m soldier)
+  1366×768: 44.6 m → 25 px tall ✓
+  1920×1080: 44.6 m → 36 px tall ✓
+
+6. POSITIONS WHERE AN ENEMY CAN BE HIT FROM MORE THAN 30 m
+  358 of 843 sample positions (42.5%) are exposed beyond 30 m
+   High Street [Ground]                 79 spots · up to 44.6 m (e.g. (35, 0.0, -9) High Street [Ground] ← from (2, 0.0, 21) Town Hall [Ground])
+   Town Hall [Ground]                   16 spots · up to 44.6 m (e.g. (2, 0.0, 21) Town Hall [Ground] ← from (35, 0.0, -9) High Street [Ground])
+   Bakery Upstairs [Upper]              10 spots · up to 43.5 m (e.g. (-31, 4.0, -15) Bakery Upstairs [Upper] ← from (-7, 0.0, 21) Town Hall [Ground])
+   Back Lane [Ground]                   42 spots · up to 42.8 m (e.g. (74, 0.0, -21) Back Lane [Ground] ← from (47, 4.0, 12) Chemist Upstairs [Upper])
+   Chemist Upstairs [Upper]              9 spots · up to 42.8 m (e.g. (47, 4.0, 12) Chemist Upstairs [Upper] ← from (74, 0.0, -21) Back Lane [Ground])
+   Inn Upstairs [Upper]                  7 spots · up to 42.4 m (e.g. (-46, 4.0, -21) Inn Upstairs [Upper] ← from (-52, 4.0, 21) Chemist Upstairs [Upper])
+   Cooper's Yard [Ground]               12 spots · up to 42.1 m (e.g. (41, 0.0, -36) Cooper's Yard [Ground] ← from (44, 0.0, 6) High Street [Ground])
+   Post Office Upstairs [Upper]         14 spots · up to 42.1 m (e.g. (-28, 4.0, 21) Post Office Upstairs [Upper] ← from (-25, 4.0, -21) Bakery Upstairs [Upper])
+   Tailor [Ground]                       4 spots · up to 42.0 m (e.g. (-13, 0.0, -21) Tailor [Ground] ← from (-13, 0.0, 21) Town Hall [Ground])
+   Terrace Walk [Upper]                  1 spots · up to 42.0 m (e.g. (38, 4.0, -21) Terrace Walk [Upper] ← from (38, 4.0, 21) South Walk [Upper])
+   South Walk [Upper]                    3 spots · up to 42.0 m (e.g. (38, 4.0, 21) South Walk [Upper] ← from (38, 4.0, -21) Terrace Walk [Upper])
+   Quay Lane [Ground]                   10 spots · up to 41.9 m (e.g. (-70, 0.0, 18) Quay Lane [Ground] ← from (-49, 4.0, -18) Inn Upstairs [Upper])
+   Arch Room [Upper]                    16 spots · up to 41.7 m (e.g. (-37, 4.0, -6) Arch Room [Upper] ← from (-1, 4.0, 15) Town Hall Upstairs [Upper])
+   Town Hall Upstairs [Upper]            3 spots · up to 41.7 m (e.g. (-1, 4.0, 15) Town Hall Upstairs [Upper] ← from (-37, 4.0, -6) Arch Room [Upper])
+   Hall Gallery [Upper]                  8 spots · up to 41.2 m (e.g. (5, 6.0, 6) Hall Gallery [Upper] ← from (-34, 0.0, -6) High Street [Ground])
+   Tailor Upstairs [Upper]               8 spots · up to 40.8 m (e.g. (-13, 4.0, -21) Tailor Upstairs [Upper] ← from (-25, 4.0, 18) Post Office Upstairs [Upper])
+   Junction [Ground]                    13 spots · up to 40.0 m (e.g. (62, 0.0, 6) Junction [Ground] ← from (71, 0.0, -33) Back Lane [Ground])
+   Clock Top [Clock Top]                 6 spots · up to 39.8 m (e.g. (-1, 9.2, -3) Clock Top [Clock Top] ← from (38, 4.0, 3) Arch Room [Upper])
+   West Spawn · Coach Yard [Ground]      9 spots · up to 39.1 m (e.g. (-76, 0.0, 6) West Spawn · Coach Yard [Ground] ← from (-73, 0.0, -33) Back Lane [Ground])
+   Arch [Ground]                         3 spots · up to 39.0 m (e.g. (38, 0.0, 0) Arch [Ground] ← from (74, 0.0, 15) Quay Lane [Ground])
+   Canal Road [Ground]                  11 spots · up to 39.0 m (e.g. (41, 0.0, 24) Canal Road [Ground] ← from (2, 0.0, 24) Lock House [Ground])
+   Lock House [Ground]                   2 spots · up to 39.0 m (e.g. (2, 0.0, 24) Lock House [Ground] ← from (41, 0.0, 24) Canal Road [Ground])
+   — [Clock Top]                         1 spots · up to 38.3 m (e.g. (-1, 9.2, 6) — [Clock Top] ← from (-37, 4.0, -6) Arch Room [Upper])
+   — [Ground]                            1 spots · up to 37.9 m (e.g. (65, 0.0, -33) — [Ground] ← from (77, 0.0, 3) East Spawn · Brewery Yard [Ground])
+   East Spawn · Brewery Yard [Ground]    4 spots · up to 37.9 m (e.g. (77, 0.0, 3) East Spawn · Brewery Yard [Ground] ← from (65, 0.0, -33) — [Ground])
+   Market Hall [Ground]                  7 spots · up to 36.8 m (e.g. (-1, 0.9, 6) Market Hall [Ground] ← from (29, 4.0, -15) Bakery Upstairs [Upper])
+   Bakery [Ground]                       3 spots · up to 36.6 m (e.g. (29, 0.0, -15) Bakery [Ground] ← from (-1, 0.9, 6) Market Hall [Ground])
+   Well Yard [Ground]                    9 spots · up to 36.5 m (e.g. (-7, 0.0, -27) Well Yard [Ground] ← from (-43, 0.0, -33) Cooper's Yard [Ground])
+   — [Upper]                             1 spots · up to 36.4 m (e.g. (-1, 4.3, 9) — [Upper] ← from (35, 0.0, 6) High Street [Ground])
+   Market Square [Ground]               16 spots · up to 36.3 m (e.g. (2, 0.9, -9) Market Square [Ground] ← from (38, 4.0, -6) Arch Room [Upper])
+   Post Office [Ground]                  8 spots · up to 36.2 m (e.g. (26, 0.0, 18) Post Office [Ground] ← from (11, 0.0, -15) Tailor [Ground])
+   Baker's Yard [Ground]                 7 spots · up to 36.1 m (e.g. (-28, 0.0, -30) Baker's Yard [Ground] ← from (-31, 0.0, 6) High Street [Ground])
+   Chapel [Ground]                       2 spots · up to 33.5 m (e.g. (-4, 0.0, -33) Chapel [Ground] ← from (-37, 0.0, -27) Cooper's Yard [Ground])
+   Crane [Ground]                        1 spots · up to 33.5 m (e.g. (29, 0.0, 24) Crane [Ground] ← from (14, 0.0, -6) High Street [Ground])
+   Inn Yard [Ground]                     3 spots · up to 33.1 m (e.g. (50, 0.0, -27) Inn Yard [Ground] ← from (53, 0.0, 6) High Street [Ground])
+   Inn [Ground]                          3 spots · up to 33.1 m (e.g. (-46, 0.0, -21) Inn [Ground] ← from (-49, 0.0, 12) Chemist [Ground])
+   Chemist [Ground]                      3 spots · up to 33.1 m (e.g. (-49, 0.0, 12) Chemist [Ground] ← from (-46, 0.0, -21) Inn [Ground])
+   Stair Lane [Ground]                   2 spots · up to 30.6 m (e.g. (-43, 0.0, -18) Stair Lane [Ground] ← from (-49, 0.0, 12) Chemist [Ground])
+   Fish Lane [Ground]                    1 spots · up to 30.1 m (e.g. (-16, 0.0, 12) Fish Lane [Ground] ← from (-13, 0.0, -18) Tailor [Ground])

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BREACHPOINT · 5v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app"></div>
+
+<!-- ── LOADOUT (3 steps) ───────────────────────────────────── -->
+<div id="loadout" class="screen">
+  <div class="lo-bg"></div>
+  <header class="lo-top">
+    <div class="logo">BREACH<span>POINT</span></div>
+    <nav class="steps">
+      <div class="st" data-step="0"><b>1</b> WEAPON</div><i></i>
+      <div class="st" data-step="1"><b>2</b> ABILITIES</div><i></i>
+      <div class="st" data-step="2"><b>3</b> DEPLOY</div>
+    </nav>
+  </header>
+
+  <!-- step 1: weapon turntable -->
+  <section class="lo-step" id="stepWeapon">
+    <div class="stage">
+      <button class="arrow left" id="wPrev" aria-label="Previous weapon">‹</button>
+      <div id="turntable"></div>
+      <button class="arrow right" id="wNext" aria-label="Next weapon">›</button>
+    </div>
+    <div class="wdots" id="wDots"></div>
+    <div class="winfo">
+      <div class="wrole" id="wRole"></div>
+      <div class="wname" id="wName"></div>
+      <div class="wdesc" id="wDesc"></div>
+      <div class="wstats" id="wStats"></div>
+    </div>
+    <div class="lo-nav"><span class="hint">← → to browse · Enter to continue</span><button id="toAbilities">NEXT ›</button></div>
+  </section>
+
+  <!-- step 2: two ability wheels -->
+  <section class="lo-step hidden" id="stepAbilities">
+    <div class="wheel" data-slot="0">
+      <div class="wlabel"><kbd>Q</kbd> ABILITY ONE</div>
+      <button class="arrow left">‹</button>
+      <div class="track"></div>
+      <button class="arrow right">›</button>
+      <label class="lock"><input type="checkbox"><span class="box"></span><span class="lt">LOCK IN</span></label>
+    </div>
+    <div class="wheel" data-slot="1">
+      <div class="wlabel"><kbd>E</kbd> ABILITY TWO</div>
+      <button class="arrow left">‹</button>
+      <div class="track"></div>
+      <button class="arrow right">›</button>
+      <label class="lock"><input type="checkbox"><span class="box"></span><span class="lt">LOCK IN</span></label>
+    </div>
+    <div class="lo-nav"><button class="ghost" id="backWeapon">‹ BACK</button><span class="hint" id="abHint">W/S pick a wheel · A/D browse · Space to lock in</span><button id="toDeploy" disabled>NEXT ›</button></div>
+  </section>
+
+  <!-- step 3: map reveal + settings -->
+  <section class="lo-step hidden" id="stepDeploy">
+    <div class="deploy-grid">
+      <div class="mapcard" id="mapCard">
+        <div class="mc-tag">MAP</div>
+        <div class="mc-name" id="mapName">—</div>
+        <div class="mc-loc" id="mapLoc"></div>
+        <div class="mc-desc" id="mapDesc"></div>
+        <div class="mc-routes"><span>LONG</span><span>MID</span><span>SHORT</span></div>
+        <button class="ghost small" id="reroll">↻ SHUFFLE MAP</button>
+      </div>
+      <div class="setup">
+        <div class="summary" id="loSummary"></div>
+        <label>CALLSIGN <input id="callsign" maxlength="14" value="Player"></label>
+        <label>BOT SKILL <select id="difficulty"><option value="recruit">Recruit</option><option value="veteran" selected>Veteran</option><option value="elite">Elite</option></select></label>
+        <label>GRAPHICS <select id="quality"><option value="medium" selected>Medium (recommended for laptops)</option><option value="low">Low</option><option value="high">High</option><option value="auto">Auto — lowers resolution if FPS drops</option></select></label>
+        <div class="row2">
+          <label>FIELD OF VIEW <span class="val" id="fovVal">95°</span><input id="fov" type="range" min="80" max="110" step="1" value="95"></label>
+          <label>RENDER SCALE <span class="val" id="rsVal">100%</span><input id="renderScale" type="range" min="50" max="100" step="5" value="100"></label>
+        </div>
+        <label>ENEMY HIGHLIGHT <select id="highlight"><option value="standard" selected>Standard — bright team rim on every soldier</option><option value="strong">Strong — glowing red enemies</option><option value="off">Off</option></select></label>
+        <label>AIM / SCOPE <select id="aimMode"><option value="toggle" selected>Toggle — right-click once to scope in, again to scope out</option><option value="hold">Hold right-click</option></select></label>
+        <div class="tip">Laptop friendly: <b>Tab</b> or <b>Caps Lock</b> also toggle aim, so you only ever need one mouse button.</div>
+      </div>
+    </div>
+    <div class="lo-nav"><button class="ghost" id="backAbilities">‹ BACK</button><span class="hint">Enter to deploy</span><button id="deployBtn">DEPLOY</button></div>
+  </section>
+  <div class="controls">
+    <b>WASD</b> move · <b>Shift</b> sprint · <b>Space</b> jump / wall-bounce · <b>C</b> crouch (silent steps) · <b>Z</b> prone · <b>X</b> corner cover ·
+    <b>LMB</b> fire · <b>RMB / Tab / Caps</b> aim · <b>R</b> reload · <b>F</b> punch / takedown · <b>Q E</b> abilities · <b>P</b> scoreboard · <b>Esc</b> pause
+  </div>
+</div>
+
+<!-- ── HUD ─────────────────────────────────────────────────── -->
+<div id="hud" class="hidden">
+  <div id="vignette"></div><div id="stasisTint"></div><div id="phaseFlash"></div><div id="empTint"></div>
+  <div id="scope"><div class="scope-ring"></div><div class="scope-h"></div><div class="scope-v"></div><div class="scope-dot"></div><div id="breath"></div></div>
+  <div id="crosshair"><i class="l"></i><i class="r"></i><i class="t"></i><i class="b"></i><i class="d"></i></div>
+  <div id="hitmarker"><i></i><i></i><i></i><i></i></div>
+  <div id="dmgdirs"></div>
+  <div id="dmgnums"></div>
+
+  <div id="scorebar">
+    <div class="team blue"><span id="scoreBlue">0</span><div class="bar"><div id="blueBar"></div></div></div>
+    <div id="timer">10:00</div>
+    <div class="team red"><div class="bar"><div id="redBar"></div></div><span id="scoreRed">0</span></div>
+  </div>
+  <div id="killfeed"></div>
+  <div id="mapWrap"><canvas id="minimap"></canvas><div id="zoneLabel"></div><div id="zoneHint"></div></div>
+
+  <div id="vitals">
+    <div id="playerName"></div>
+    <div class="vbar shield"><div id="shieldFill"></div></div>
+    <div class="vbar hp"><div id="hpFill"></div><span id="hpText">100</span></div>
+    <div class="vrow"><span id="stanceText">STANDING</span><span id="noise"></span></div>
+  </div>
+  <div id="abilities"></div>
+  <div id="weaponBox">
+    <div id="weaponName"></div>
+    <div><span id="ammo">30</span><span id="mag">/ 30</span></div>
+    <div id="reloadBar"><div></div></div>
+    <div id="fps"></div>
+  </div>
+  <div id="prompt"></div>
+  <div id="medals"></div>
+  <div id="toast"></div>
+  <div id="death" class="hidden"><div class="d1">ELIMINATED</div><div id="deathKiller"></div><div id="deathTimer"></div></div>
+  <div id="scoreboard" class="hidden"></div>
+</div>
+
+<div id="pause" class="screen hidden">
+  <div class="logo small">BREACH<span>POINT</span></div>
+  <div class="pause-msg">PAUSED — click to resume</div>
+  <div class="pause-row">
+    <label>Mouse sensitivity <input id="sens" type="range" min="0.3" max="3" step="0.05" value="1"></label>
+    <label>Volume <input id="vol" type="range" min="0" max="1" step="0.05" value="0.6"></label>
+  </div>
+  <button id="quitBtn">QUIT TO LOADOUT</button>
+</div>
+<div id="endscreen" class="screen hidden"></div>
+<div id="loading" class="screen hidden"><div class="logo small">BREACH<span>POINT</span></div><div class="pause-msg" id="loadingMsg">Building map…</div></div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

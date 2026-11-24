@@ -1,0 +1,88 @@
+{
+  "id": "testbed",
+  "name": "TESTBED",
+  "location": "Map-system test fixture",
+  "desc": "Exercises every map feature: floors, stairs, ramps, drop-downs, bridges, windows, grates, 3rd level.",
+  "swatch": ["#9aa4ae", "#d8c4a0", "#3d9ca8", "#ffe1b8"],
+  "bounds": [-42, -27, 42, 27],
+  "symmetry": "rotate180",
+  "floors": [ { "name": "Ground", "y": 0 }, { "name": "Upper", "y": 4 }, { "name": "Roof", "y": 8.3 } ],
+  "theme": {
+    "sky": { "top": "#4f8fd0", "horizon": "#dfe6ee", "bottom": "#c9d3dc", "sun": "#fff1d8", "elev": 48, "az": 40, "clouds": 0.4, "stars": 0 },
+    "sun": { "color": "#fff1dc", "intensity": 2.6 }, "hemi": { "sky": "#d8e6ff", "ground": "#a89880", "intensity": 1.0 },
+    "fog": { "color": "#dfe6ee", "near": 120, "far": 500 }, "exposure": 1.0, "env": 0.4,
+    "grade": { "sat": 1.05, "contrast": 1.03, "vignette": 0.12 }, "bloom": 0.25, "weather": "none", "ambient": "town", "stepOut": "stone"
+  },
+  "materials": {
+    "paving":  { "tex": "stone",    "color": "#c9c2b6", "scale": 2.5 },
+    "plaster": { "tex": "plaster",  "color": "#d8d2c6", "scale": 3 },
+    "loft":    { "tex": "plaster",  "color": "#b9c6cf", "scale": 3 },
+    "brick":   { "tex": "brick",    "color": "#b98a72", "scale": 2.5 },
+    "deck":    { "tex": "plate",    "color": "#8f969e", "scale": 1.5, "rough": 0.5, "metal": 0.5 },
+    "conc":    { "tex": "concrete", "color": "#b0aca4", "scale": 4 }
+  },
+  "geometry": [
+    { "type": "ground", "rect": [-42, -27, 42, 27], "mat": "paving", "mirror": false },
+    { "type": "wall", "from": [-42, -26], "to": [42, -26], "h": 10, "t": 2, "mat": "brick" },
+    { "type": "wall", "from": [-41, -25], "to": [-41, 25], "h": 10, "t": 2, "mat": "brick" },
+
+    { "type": "wall", "from": [-26, -20], "to": [-10, -20], "h": 8, "mat": "plaster",
+      "openings": [ { "at": 4, "kind": "window", "y": 5.1, "w": 1.6 }, { "at": 12, "kind": "window", "y": 5.1, "w": 1.6 } ] },
+    { "type": "wall", "from": [-26, -6], "to": [-10, -6], "h": 8, "mat": "plaster",
+      "openings": [ { "at": 8, "kind": "door", "w": 1.6 }, { "at": 4, "kind": "window", "y": 5.1, "w": 1.6 }, { "at": 12, "kind": "grate", "y": 5.1, "w": 1.6, "h": 1.2 } ] },
+    { "type": "wall", "from": [-26, -20], "to": [-26, -6], "h": 8, "mat": "plaster", "openings": [ { "at": 7, "kind": "door", "w": 1.6 } ] },
+    { "type": "wall", "from": [-10, -20], "to": [-10, -6], "h": 8, "mat": "plaster",
+      "openings": [ { "at": 10, "kind": "door", "w": 1.6 }, { "at": 12, "kind": "door", "y": 4, "w": 1.6 } ] },
+    { "type": "floor", "rect": [-26, -20, -10, -6], "y": 4, "t": 0.3, "mat": "deck", "holes": [ [-25, -19, -18, -17], [-14, -12, -12, -10] ] },
+    { "type": "stairs", "from": [-25, -18], "dir": "+x", "w": 2, "y": 0, "to": 4, "mat": "conc" },
+    { "type": "floor", "rect": [-26.2, -20.2, -9.8, -5.8], "y": 8.3, "t": 0.3, "mat": "conc", "holes": [ [-12, -19, -10, -11.5] ] },
+    { "type": "stairs", "from": [-11, -19], "dir": "+z", "w": 2, "y": 4, "to": 8.3, "mat": "conc" },
+    { "type": "box", "min": [-26.2, 8.3, -20.2], "max": [-9.8, 9.3, -19.9], "mat": "plaster" },
+    { "type": "box", "min": [-26.2, 8.3, -20.2], "max": [-25.9, 9.3, -5.8], "mat": "plaster" },
+
+    { "type": "floor", "rect": [-10, -9, -1, -7], "y": 4, "t": 0.25, "mat": "deck" },
+    { "type": "floor", "rect": [-1, -9, 1, -4], "y": 4, "t": 0.25, "mat": "deck" },
+    { "type": "railing", "from": [-10, -9], "to": [1, -9], "y": 4 },
+
+    { "type": "wall", "from": [-31, -8], "to": [-31, 8], "h": 4, "mat": "brick", "openings": [ { "at": 2, "kind": "door", "w": 2.4 }, { "at": 14, "kind": "door", "w": 2.4 } ] },
+    { "type": "wall", "from": [-31, -8], "to": [-31, -25], "h": 4, "mat": "brick" },
+    { "type": "wall", "from": [-31, 8], "to": [-31, 25], "h": 4, "mat": "brick", "openings": [ { "at": 6, "kind": "door", "w": 2.4 } ] },
+    { "type": "box", "min": [-29, 0, -9], "max": [-28.4, 3, -3], "mat": "brick" },
+    { "type": "box", "min": [-29, 0, 3], "max": [-28.4, 3, 9], "mat": "brick" },
+    { "type": "box", "min": [-34, 0, 8], "max": [-26, 1.5, 16], "mat": "conc" },
+    { "type": "ramp", "rect": [-34, 4, -30, 8], "dir": "+z", "y0": 0, "y1": 1.5, "mat": "conc" },
+    { "type": "prop", "kind": "crate", "at": [-28, 1.5, 14], "stack": 2 },
+    { "type": "prop", "kind": "crate", "at": [-20, 0, 2] },
+    { "type": "cover", "at": [-14, 0, 3], "w": 3, "d": 0.8, "mat": "conc" },
+    { "type": "prop", "kind": "lamp", "at": [-30, 0, -4] },
+
+    { "type": "wall", "from": [-4, -4], "to": [-4, 4], "h": 8, "mat": "brick",
+      "openings": [ { "at": 4, "kind": "window", "y": 5.1, "w": 1.4 } ] },
+    { "type": "wall", "from": [-4, -4], "to": [4, -4], "h": 8, "mat": "brick",
+      "openings": [ { "at": 6, "kind": "door", "w": 1.6 }, { "at": 4, "kind": "door", "y": 4, "w": 1.6 } ] },
+    { "type": "floor", "rect": [-4, -4, 4, 4], "y": 4, "t": 0.3, "mat": "deck", "holes": [ [-3.6, -3.6, -2.1, 3.6] ], "mirror": false },
+    { "type": "stairs", "from": [-2.85, 3.5], "dir": "-z", "w": 1.4, "y": 0, "to": 4, "mat": "conc", "mirror": false },
+    { "type": "floor", "rect": [-4.2, -4.2, 4.2, 4.2], "y": 8.3, "t": 0.3, "mat": "conc", "holes": [ [2.1, -3.6, 3.6, 3.6] ], "mirror": false },
+    { "type": "stairs", "from": [2.85, -3.5], "dir": "+z", "w": 1.4, "y": 4, "to": 8.3, "run": 0.45, "mat": "conc", "mirror": false },
+    { "type": "box", "min": [-4.2, 8.3, -4.2], "max": [4.2, 9.3, -3.9], "mat": "brick" },
+    { "type": "box", "min": [-4.2, 8.3, -3.9], "max": [-3.9, 9.3, 4.2], "mat": "brick" }
+  ],
+  "areas": [
+    { "name": "Blue Spawn", "mirrorName": "Red Spawn", "kind": "SPAWN", "tag": "spawn", "rect": [-40, -6, -32, 6] },
+    { "name": "Main Street", "kind": "MID", "rect": [-32, -6, 32, 6], "mirror": false },
+    { "name": "Workshop", "mirrorName": "Red Workshop", "kind": "INDOOR", "rect": [-26, -20, -10, -6], "y": [0, 3.9], "key": true },
+    { "name": "Workshop Loft", "mirrorName": "Red Workshop Loft", "kind": "INDOOR", "rect": [-26, -20, -10, -6], "y": [3.9, 8.2], "floor": 1, "key": true },
+    { "name": "Workshop Roof", "mirrorName": "Red Workshop Roof", "kind": "ROOF", "rect": [-26, -20, -10, -6], "y": [8.2, 12], "floor": 2 },
+    { "name": "Catwalk", "mirrorName": "Red Catwalk", "kind": "HALL", "rect": [-10, -9, 1, -4], "y": [3.5, 6], "floor": 1, "key": true },
+    { "name": "Loading Dock", "mirrorName": "Red Dock", "kind": "SITE", "tag": "siteB", "rect": [-34, 4, -26, 16], "key": true },
+    { "name": "Tower Base", "kind": "INDOOR", "rect": [-4, -4, 4, 4], "y": [0, 3.9], "mirror": false, "key": true },
+    { "name": "Tower Deck", "kind": "INDOOR", "rect": [-4, -4, 4, 4], "y": [3.9, 8.2], "floor": 1, "mirror": false, "key": true },
+    { "name": "Lookout", "kind": "SITE", "tag": "siteA", "rect": [-4.2, -4.2, 4.2, 4.2], "y": [8.2, 12], "floor": 2, "mirror": false, "key": true }
+  ],
+  "spawns": [ { "team": 0, "at": [-37, 0, -3] }, { "team": 0, "at": [-37, 0, 0] }, { "team": 0, "at": [-37, 0, 3] }, { "team": 0, "at": [-35, 0, -1.5] }, { "team": 0, "at": [-35, 0, 1.5] } ],
+  "routes": {
+    "street": { "kind": "mid", "symmetric": true, "pts": [ [-35, 0, 0], [-20, 0, 0], [-8, 0, -1] ] },
+    "loft":   { "kind": "short", "symmetric": true, "pts": [ [-35, 0, 0], [-18, 0, -8], [-17, 4, -14], [-5, 4, -8], [0, 4, -6] ] },
+    "dock":   { "kind": "long", "symmetric": true, "pts": [ [-35, 0, 0], [-32, 1.5, 12], [-20, 0, 12] ] }
+  }
+}

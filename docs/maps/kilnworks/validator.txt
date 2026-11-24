@@ -1,0 +1,75 @@
+MAP KILNWORKS (kilnworks) — built in 208 ms
+  bounds {"x0":-58,"z0":-42,"x1":58,"z1":42} · 662 boxes · 2 ramps · 44288 nav nodes · 198 drop links · 24 jump links
+  nodes per floor: Ground@0m=23092  Upper@4.5m=7498  Furnace Top@9m=13698
+  ramp (-26,-10)–(-14,-6.5) 0→4.5 m, 20.6°
+  ramp (14,6.5)–(26,10) 0→4.5 m, 20.6°
+
+1. WALKABLE CONNECTIVITY
+  reachable nodes: 26056 / 44288   (18144 unreachable nodes outside tagged areas — roofs/props, ignored)
+  ✓ no unreachable regions inside tagged areas
+  ✓ no stuck spots (every reachable node can return to a spawn)
+
+2. SHORTEST TRAVEL TIME, spawn → key area (sprint 9.0 m/s · walk 6.2 m/s)
+  Cinder Heap                   BLUE   5.4 s /   7.9 s   49 m   RED  10.5 s /  15.2 s   94 m
+  Rail Cut                      BLUE   0.9 s /   1.3 s    8 m   RED  10.8 s /  15.7 s   97 m
+  Hopper Court                  BLUE   3.6 s /   5.2 s   32 m   RED   9.2 s /  13.4 s   83 m
+  Kiln Shed                     BLUE   2.8 s /   4.1 s   25 m   RED  11.3 s /  16.4 s  102 m
+  Drying Loft                   BLUE   7.9 s /  11.5 s   71 m   RED  10.7 s /  15.6 s   97 m
+  Sort Yard                     BLUE   4.3 s /   6.3 s   39 m   RED   9.2 s /  13.3 s   82 m
+  Hopper Deck                   BLUE   5.9 s /   8.6 s   53 m   RED  11.4 s /  16.6 s  103 m
+  Furnace Hall                  BLUE   6.7 s /   9.7 s   60 m   RED   6.7 s /   9.8 s   61 m
+  Mezzanine                     BLUE   8.0 s /  11.6 s   72 m   RED   8.0 s /  11.7 s   72 m
+  Furnace Top                   BLUE  10.1 s /  14.6 s   91 m   RED  10.0 s /  14.5 s   90 m
+  Cinder Heap                   BLUE  10.4 s /  15.1 s   93 m   RED   5.3 s /   7.8 s   48 m
+  Rail Cut                      BLUE  10.9 s /  15.8 s   98 m   RED   0.9 s /   1.4 s    9 m
+  Hopper Court                  BLUE   9.2 s /  13.3 s   82 m   RED   3.6 s /   5.2 s   32 m
+  Press Shed                    BLUE  11.2 s /  16.3 s  101 m   RED   2.8 s /   4.1 s   26 m
+  Mould Loft                    BLUE  10.7 s /  15.5 s   96 m   RED   7.8 s /  11.4 s   71 m
+  Ash Yard                      BLUE   9.1 s /  13.2 s   82 m   RED   4.4 s /   6.4 s   40 m
+  Hopper Deck                   BLUE  11.3 s /  16.5 s  102 m   RED   5.8 s /   8.4 s   52 m
+
+3. LONGEST UNBROKEN SIGHTLINES (eye 1.66 m → chest/head, 672 sample points every 3 m, 127 ms)
+   39.5 m  (-55, 0.0, -39) Cinder Heap [Ground]  ↔  (-16, 0.0, -33) Lamp Store [Ground]
+   39.0 m  (-55, 0.0, -27) Cinder Heap [Ground]  ↔  (-16, 0.0, -27) Drying Shed [Ground]
+   37.6 m  (5, 0.0, -9) Furnace Hall [Ground]  ↔  (-28, 0.0, 9) Hopper Court [Ground]
+   36.6 m  (-22, 2.9, -9) — [Ground]  ↔  (-16, 0.0, 27) Kiln Shed [Ground]
+   36.4 m  (50, 4.5, 3) Boiler House Upstairs [Upper]  ↔  (53, 0.0, 39) Cinder Heap [Ground]
+   36.2 m  (17, 0.0, -27) Press Shed [Ground]  ↔  (20, 2.3, 9) — [Ground]
+   36.1 m  (-52, 0.0, 3) Pump House [Ground]  ↔  (-49, 0.0, 39) Clay Yard [Ground]
+   36.0 m  (17, 0.0, 27) Mould Shed [Ground]  ↔  (53, 0.0, 27) Cinder Heap [Ground]
+   35.1 m  (-25, 0.0, -27) Drying Shed [Ground]  ↔  (8, 0.0, -15) Ash Yard [Ground]
+   35.1 m  (-7, 0.0, 15) Sort Yard [Ground]  ↔  (26, 0.0, 27) Mould Shed [Ground]
+
+4. SPAWN → ENEMY SPAWN SIGHTLINES (must be 0)
+  ✓ 0 (checked 579 × 579 spawn positions)
+
+5. ON-SCREEN ENEMY HEIGHT AT THE LONGEST SIGHTLINE (default FOV 95° horizontal, 1.8 m soldier)
+  1366×768: 39.5 m → 29 px tall ✓
+  1920×1080: 39.5 m → 40 px tall ✓
+
+6. POSITIONS WHERE AN ENEMY CAN BE HIT FROM MORE THAN 30 m
+  105 of 672 sample positions (15.6%) are exposed beyond 30 m
+   Cinder Heap [Ground]                 21 spots · up to 39.5 m (e.g. (-55, 0.0, -39) Cinder Heap [Ground] ← from (-16, 0.0, -33) Lamp Store [Ground])
+   Lamp Store [Ground]                   8 spots · up to 39.5 m (e.g. (-16, 0.0, -33) Lamp Store [Ground] ← from (-55, 0.0, -39) Cinder Heap [Ground])
+   Drying Shed [Ground]                  4 spots · up to 39.0 m (e.g. (-16, 0.0, -27) Drying Shed [Ground] ← from (-55, 0.0, -27) Cinder Heap [Ground])
+   Furnace Hall [Ground]                 6 spots · up to 37.6 m (e.g. (5, 0.0, -9) Furnace Hall [Ground] ← from (-28, 0.0, 9) Hopper Court [Ground])
+   Hopper Court [Ground]                 6 spots · up to 37.6 m (e.g. (26, 0.0, -9) Hopper Court [Ground] ← from (-7, 0.0, 9) Furnace Hall [Ground])
+   — [Ground]                            4 spots · up to 36.6 m (e.g. (-22, 2.9, -9) — [Ground] ← from (-16, 0.0, 27) Kiln Shed [Ground])
+   Kiln Shed [Ground]                    1 spots · up to 36.6 m (e.g. (-16, 0.0, 27) Kiln Shed [Ground] ← from (-22, 2.9, -9) — [Ground])
+   Boiler House Upstairs [Upper]         2 spots · up to 36.4 m (e.g. (50, 4.5, 3) Boiler House Upstairs [Upper] ← from (53, 0.0, 39) Cinder Heap [Ground])
+   Press Shed [Ground]                   3 spots · up to 36.2 m (e.g. (17, 0.0, -27) Press Shed [Ground] ← from (20, 2.3, 9) — [Ground])
+   Pump House [Ground]                   1 spots · up to 36.1 m (e.g. (-52, 0.0, 3) Pump House [Ground] ← from (-49, 0.0, 39) Clay Yard [Ground])
+   Clay Yard [Ground]                    3 spots · up to 36.1 m (e.g. (-49, 0.0, 39) Clay Yard [Ground] ← from (-52, 0.0, 3) Pump House [Ground])
+   Mould Shed [Ground]                   4 spots · up to 36.0 m (e.g. (17, 0.0, 27) Mould Shed [Ground] ← from (53, 0.0, 27) Cinder Heap [Ground])
+   Ash Yard [Ground]                     7 spots · up to 35.1 m (e.g. (8, 0.0, -15) Ash Yard [Ground] ← from (-25, 0.0, -27) Drying Shed [Ground])
+   Sort Yard [Ground]                    5 spots · up to 35.1 m (e.g. (-7, 0.0, 15) Sort Yard [Ground] ← from (26, 0.0, 27) Mould Shed [Ground])
+   Weighbridge [Ground]                  3 spots · up to 35.0 m (e.g. (17, 0.0, 39) Weighbridge [Ground] ← from (-13, 0.0, 21) Sort Yard [Ground])
+   Pump House Upstairs [Upper]           2 spots · up to 33.8 m (e.g. (-52, 4.5, -3) Pump House Upstairs [Upper] ← from (-46, 0.0, -36) Cinder Heap [Ground])
+   Slag Yard Spawn [Ground]              3 spots · up to 33.1 m (e.g. (50, 0.0, -36) Slag Yard Spawn [Ground] ← from (53, 0.0, -3) Boiler House [Ground])
+   Rail Cut [Ground]                    12 spots · up to 33.1 m (e.g. (-13, 0.0, -36) Rail Cut [Ground] ← from (20, 0.0, -33) Lamp Store [Ground])
+   Pump Lane [Ground]                    5 spots · up to 33.1 m (e.g. (-52, 0.0, 6) Pump Lane [Ground] ← from (-49, 0.0, 39) Clay Yard [Ground])
+   Boiler House [Ground]                 1 spots · up to 33.1 m (e.g. (53, 0.0, -3) Boiler House [Ground] ← from (50, 0.0, -36) Slag Yard Spawn [Ground])
+   Hopper Deck [Upper]                   1 spots · up to 31.6 m (e.g. (26, 4.5, 9) Hopper Deck [Upper] ← from (17, 0.0, -21) Press Shed [Ground])
+   Mezzanine [Upper]                     1 spots · up to 31.2 m (e.g. (-10, 4.5, -3) Mezzanine [Upper] ← from (-37, 0.0, 12) Coal Alley [Ground])
+   Coal Alley [Ground]                   1 spots · up to 31.2 m (e.g. (-37, 0.0, 12) Coal Alley [Ground] ← from (-10, 4.5, -3) Mezzanine [Upper])
+   — [Upper]                             1 spots · up to 30.6 m (e.g. (-25, 4.0, -9) — [Upper] ← from (-55, 4.5, -3) Pump House Upstairs [Upper])
