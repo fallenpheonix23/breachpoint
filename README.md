@@ -2,9 +2,12 @@
 
 You + 4 bot teammates vs 5 enemy bots. Team deathmatch (first to 75 or 10 minutes) on Ashgrove or Kilnworks, plus a Breach attack/defend mode in development.
 
-## Run
+## Play online
+https://fallenpheonix23.github.io/breachpoint/ (Chrome/Edge/Firefox/Safari 17.2+)
+
+## Run locally
 ```
-npm install         # fetches three.js 0.160 into node_modules/
+npm install         # three.js 0.160 for the node test tools (the page loads it from jsDelivr)
 ./run.sh            # serves on http://localhost:8080 (needs python3)
 ```
 
