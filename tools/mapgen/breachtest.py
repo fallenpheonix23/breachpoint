@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generates src/maps/data/breachtest.json — a small test fixture for the Breach (attack/defend) mode.
 Attackers spawn south behind a setup gate; Site A mid-south; a forward attacker spawn (gate opens when A falls);
-Site B north; defenders spawn north. Not in the rotation (TEST_MAPS)."""
+Site B north; defenders spawn north. In the map rotation (MAPS)."""
 import json, os
 
 E = []
@@ -23,7 +23,7 @@ box(-14, 0, 18, -12, 3, 26); box(12, 0, 14, 14, 3, 22); box(-16, 0, -24, -13, 3,
 wall((-10, -38), (10, -38), ops=[(10, 8)]); wall((-10, -50), (-10, -38)); wall((10, -50), (10, -38))
 
 data = dict(
-    id='breachtest', name='BREACH TEST', location='Test fixture', desc='Breach mode test map: two sites, setup gate, forward spawn.',
+    id='breachtest', name='BREACH TEST', location='Training yard', desc='Attack/defend: hold the setup gate, take Site A to unlock the forward spawn, then push Site B.',
     swatch=['#9aa4b1', '#d8a64a', '#5a6270'], bounds=[-26, -52, 26, 52], symmetry='none', mode='breach', setup=20, clock=[210, 150],
     floors=[dict(name='Ground', y=0)],
     theme={'sky': {'top': '#7d93ad', 'horizon': '#dfe3e8', 'bottom': '#c9ccd2', 'sun': '#fff2d8', 'elev': 50, 'az': 150, 'clouds': 0.3, 'stars': 0},

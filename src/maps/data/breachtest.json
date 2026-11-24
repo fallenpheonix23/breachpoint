@@ -1,8 +1,8 @@
 {
  "id": "breachtest",
  "name": "BREACH TEST",
- "location": "Test fixture",
- "desc": "Breach mode test map: two sites, setup gate, forward spawn.",
+ "location": "Training yard",
+ "desc": "Attack/defend: hold the setup gate, take Site A to unlock the forward spawn, then push Site B.",
  "swatch": [
   "#9aa4b1",
   "#d8a64a",

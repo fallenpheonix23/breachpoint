@@ -1,6 +1,6 @@
 # BREACHPOINT — 5v5 first-person shooter (browser, Three.js)
 
-You + 4 bot teammates vs 5 enemy bots. Team deathmatch (first to 75 or 10 minutes) on Ashgrove or Kilnworks, plus a Breach attack/defend mode in development.
+You + 4 bot teammates vs 5 enemy bots. A random map each match: team deathmatch (first to 75 or 10 minutes) on Ashgrove or Kilnworks, or Breach (attack/defend, two sites, swap sides at half) on Breach Test.
 
 ## Play online
 https://fallenpheonix23.github.io/breachpoint/ (Chrome/Edge/Firefox/Safari 17.2+)
